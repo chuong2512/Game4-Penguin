@@ -47,10 +47,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	//Get Bullets from another script
-	public static int Bullets{
-		get{ return instance.bullets; }
-		set{ instance.bullets = value; }
-	}
 
 	//Get Best of this level from another script
 	public static int Best {

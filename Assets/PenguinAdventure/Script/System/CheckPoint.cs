@@ -14,7 +14,6 @@ public class CheckPoint : MonoBehaviour {
 			Camera.main.transform.position = new Vector3 (transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 
 			GameManager.Stars = GlobalValue.checkpointstars;
-			GameManager.Bullets = GlobalValue.checkpointbullet;
 			GameManager.Score = GlobalValue.checkpointscore;
 			
 		} 
@@ -26,7 +25,6 @@ public class CheckPoint : MonoBehaviour {
 			GlobalValue.checkpoint = true;
 			GlobalValue.isUsingJetpack = player.isUsingJetPack;
 			GlobalValue.checkpointstars = GameManager.Stars;
-			GlobalValue.checkpointbullet = GameManager.Bullets;
 			GlobalValue.checkpointscore = GameManager.Score;
 			SoundManager.PlaySfx (checkpointSound, 0.5f);
 

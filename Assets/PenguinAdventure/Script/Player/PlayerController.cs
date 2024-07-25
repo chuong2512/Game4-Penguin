@@ -220,8 +220,8 @@ public class PlayerController : MonoBehaviour {
 	//Called by Controller UI and PC
 	public void Attack(){
 		if (!die && !isCannonFiring) {
-			if (GameManager.Bullets > 0) {		//only allow throw the bullet when the amount of bullet greater then zero
-				GameManager.Bullets--;
+			if (GlobalValue.Checkpointbullet > 0) {		//only allow throw the bullet when the amount of bullet greater then zero
+				GlobalValue.Checkpointbullet--;
 				SoundManager.PlaySfx (soundThrow);
 				anim.SetTrigger (thrownTrigger);		//set trigger to throw
 				GameObject obj = Instantiate (Bullet, throwPoint.position, Quaternion.AngleAxis (30, Vector3.forward)) as GameObject;
@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		else if (other.gameObject.CompareTag ("Bullet")) {
 			SoundManager.PlaySfx (soundCollectBullet);
-			GameManager.Bullets += 10;
+			GlobalValue.Checkpointbullet += 10;
 			Destroy (other.gameObject);
 		}
 		else if (other.gameObject.CompareTag ("Magnet")) {
